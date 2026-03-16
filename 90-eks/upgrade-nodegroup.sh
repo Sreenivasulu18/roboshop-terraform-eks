@@ -60,7 +60,7 @@ echo -e "${Y}Current nodegroup: $CURRENT_NG_VERSION${N}" | tee -a "$LOG_FILE"
 echo -e "${Y}Target  nodegroup: $TARGET_NG_VERSION${N}" | tee -a "$LOG_FILE"
 
 # --- Get current control plane version
-CP_VERSION=$(aws eks describe-cluster \
+CP_VERSION=$(aws eks describe-cluster \ 
   --name "$CLUSTER_NAME" \
   --region "$AWS_REGION" \
   --query 'cluster.version' \
