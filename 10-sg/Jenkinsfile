@@ -90,6 +90,15 @@ pipeline {
                         }
                     }
                 }
+                stage('ECR'){
+                    steps{
+                        script{
+                            build job: '40-ecr',
+                                wait: false, // wait for completion
+                                propagate: false // Propagate status
+                        }
+                    }
+                }
                 stage('ACM'){
                     steps{
                         script{
