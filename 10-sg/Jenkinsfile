@@ -75,7 +75,7 @@ pipeline {
                 stage('Bastion'){
                     steps {
                         script{
-                            build job: '20-bastion'
+                            build job: '20-bastion',
                                 wait: false, // wait for completion
                                 propagate: false // Propagate status
                         }
@@ -84,7 +84,7 @@ pipeline {
                 stage('SG Rules'){
                     steps{
                         script{
-                            build job: '30-sg-rules'
+                            build job: '30-sg-rules',
                                 wait: false, // wait for completion
                                 propagate: false // Propagate status
                         }
